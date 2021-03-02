@@ -1,15 +1,4 @@
 [Unit]
-Description=RethinkDB database offsite backup
-
-[Service]
-ExecStart=/home/mantarobot/data/backup.sh
-SuccessExitStatus=143
-
-[Install]
-WantedBy=multi-user.target
-
-root@Mantaro:/etc/systemd/system# cat rtdb-backup.timer
-[Unit]
 Description=RethinkDB database off-site backups
 
 [Timer]
