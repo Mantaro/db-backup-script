@@ -2,7 +2,7 @@
 Description=RethinkDB database off-site backups
 
 [Timer]
-OnCalendar=daily
+OnCalendar=*-*-* 1:00:00
 Persistent=true
 AccuracySec=30s
 
