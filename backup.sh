@@ -1,9 +1,8 @@
 #!/bin/bash
 
 DIR="/home/mantarobot/database_backups"
+FILENAME="mongodb-backup-$(date +%Y-%m-%d-%H-%M).tar.gz"
+
 cd $DIR
-
-FILENAME="rethinkdb-backup-$(date +%Y-%m-%d-%H-%M).tar.gz"
-
-rethinkdb dump -f $FILENAME --clients 8
+mongodump --gzip --archive=$FILENAME
 backblaze-b2 upload-file mantaro-database $FILENAME $FILENAME
